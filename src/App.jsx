@@ -8,19 +8,19 @@ export default function App() {
 
   if (showLogin) {
     return (
-      <LoginPage 
-        onBack={() => setShowLogin(false)} 
-        onLogin={(userName) => {
+      <LoginPage
+        onBack={() => setShowLogin(false)}
+        onLoginSuccess={(userName) => {
           setUser(userName);
           setShowLogin(false);
-        }} 
+        }}
       />
     );
   }
 
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-white text-black select-none">
-      
+
       {/* Background Stationery Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -30,9 +30,9 @@ export default function App() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source 
-            src="/NoteBox_stationery_product_film_4267860a_1080p.mp4" 
-            type="video/mp4" 
+          <source
+            src="/NoteBox_stationery_product_film_4267860a_1080p.mp4"
+            type="video/mp4"
           />
         </video>
         {/* Subtle, non-faded overlay: video stays clear & vibrant */}
@@ -42,7 +42,7 @@ export default function App() {
 
       {/* Landing Content */}
       <div className="relative z-10 h-full w-full flex flex-col justify-between p-6 sm:p-10 md:p-14 max-w-7xl mx-auto">
-        
+
         {/* Header */}
         <header className="flex items-center justify-between">
           <div className="flex items-center gap-1.5">
